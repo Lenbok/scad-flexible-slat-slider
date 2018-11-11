@@ -49,7 +49,8 @@ module binder() {
         }
         translate([0, 0, height / 2])  roundedcube([width, depth, height + 2], center = true, r = 0.75);
     }
-    translate([0, depth / 2 + 0.01, 0])  rotate([90, 0, 0])  hull() {
+    // Tongue
+    translate([0, depth / 2 + 0.01, height])  rotate([90, 180, 0])  hull() {
         translate([0, height - 6 - (9 / 2), 0]) cylinder(r1 = 9 / 2, r2 = 9 / 2 - 0.75, h = 1, center = false);
         translate([-(9 / 2), 0, 0]) cube([8, 1, 1], center = false);
     }
